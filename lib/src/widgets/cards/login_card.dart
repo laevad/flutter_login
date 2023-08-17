@@ -218,7 +218,7 @@ class _LoginCardState extends State<_LoginCard> with TickerProviderStateMixin {
     await _submitController.reverse();
 
     if (!DartHelper.isNullOrEmpty(error)) {
-      showErrorToast(context, messages.flushbarTitleError, error!);
+      // showErrorToast(context, messages.flushbarTitleError, error!);
       Future.delayed(const Duration(milliseconds: 271), () {
         if (mounted) {
           setState(() => _showShadow = true);
@@ -264,10 +264,10 @@ class _LoginCardState extends State<_LoginCard> with TickerProviderStateMixin {
     if (!loginProvider.animated) {
       final String? error = await loginProvider.callback();
 
-      final messages = Provider.of<LoginMessages>(context, listen: false);
+      // final messages = Provider.of<LoginMessages>(context, listen: false);
 
       if (!DartHelper.isNullOrEmpty(error)) {
-        showErrorToast(context, messages.flushbarTitleError, error!);
+        // showErrorToast(context, messages.flushbarTitleError, error!);
         return false;
       }
 
@@ -292,11 +292,11 @@ class _LoginCardState extends State<_LoginCard> with TickerProviderStateMixin {
       }
     });
 
-    final messages = Provider.of<LoginMessages>(context, listen: false);
+    // final messages = Provider.of<LoginMessages>(context, listen: false);
 
     if (!DartHelper.isNullOrEmpty(error)) {
       await control?.reverse();
-      showErrorToast(context, messages.flushbarTitleError, error!);
+      // showErrorToast(context, messages.flushbarTitleError, error!);
       Future.delayed(const Duration(milliseconds: 271), () {
         if (mounted) {
           setState(() => _showShadow = true);
@@ -320,7 +320,7 @@ class _LoginCardState extends State<_LoginCard> with TickerProviderStateMixin {
         );
         await control?.reverse();
         if (!DartHelper.isNullOrEmpty(error)) {
-          showErrorToast(context, messages.flushbarTitleError, error!);
+          // showErrorToast(context, messages.flushbarTitleError, error!);
           Future.delayed(const Duration(milliseconds: 271), () {
             if (mounted) {
               setState(() => _showShadow = true);

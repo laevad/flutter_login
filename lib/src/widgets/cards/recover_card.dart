@@ -58,7 +58,7 @@ class _RecoverCardState extends State<_RecoverCard>
       return false;
     }
     final auth = Provider.of<Auth>(context, listen: false);
-    final messages = Provider.of<LoginMessages>(context, listen: false);
+    // final messages = Provider.of<LoginMessages>(context, listen: false);
 
     _formRecoverKey.currentState!.save();
     await _submitController.forward();
@@ -66,16 +66,16 @@ class _RecoverCardState extends State<_RecoverCard>
     final error = await auth.onRecoverPassword!(auth.email);
 
     if (error != null) {
-      showErrorToast(context, messages.flushbarTitleError, error);
+      // showErrorToast(context, messages.flushbarTitleError, error);
       setState(() => _isSubmitting = false);
       await _submitController.reverse();
       return false;
     } else {
-      showSuccessToast(
-        context,
-        messages.flushbarTitleSuccess,
-        messages.recoverPasswordSuccess,
-      );
+      // showSuccessToast(
+      //   context,
+      //   messages.flushbarTitleSuccess,
+      //   messages.recoverPasswordSuccess,
+      // );
       setState(() => _isSubmitting = false);
       widget.onSubmitCompleted();
       return true;
